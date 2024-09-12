@@ -82,7 +82,7 @@ const FinancialRecordTable = () => {
               <td className="px-4 py-2 border-b">
                 <button
                   onClick={() => handleEdit(record)}
-                  className="bg-yellow-500 text-white px-3 py-1 rounded mr-2 hover:bg-yellow-600"
+                  className="bg-blue-700 text-white px-3 py-1 rounded mr-2 hover:bg-yellow-600"
                 >
                   Edit
                 </button>
@@ -101,48 +101,81 @@ const FinancialRecordTable = () => {
       {/* Show edit form if a record is being edited */}
       {editRecord && (
         <div className="bg-gray-50 p-4 rounded-lg shadow-lg mt-6">
-          <h3 className="text-lg font-semibold mb-4 text-blue-800">Edit Record</h3>
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            handleSaveEdit();
-          }} className="flex flex-wrap gap-4">
+          <h3 className="text-lg font-semibold mb-4 text-blue-800">
+            Edit Record
+          </h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSaveEdit();
+            }}
+            className="flex flex-wrap gap-4"
+          >
             <div className="flex flex-col w-full md:w-auto">
-              <label htmlFor="description" className="text-sm font-medium text-gray-700">Description</label>
+              <label
+                htmlFor="description"
+                className="text-sm font-medium text-gray-700"
+              >
+                Description
+              </label>
               <input
                 type="text"
                 value={editRecord.description}
-                onChange={(e) => setEditRecord({ ...editRecord, description: e.target.value })}
+                onChange={(e) =>
+                  setEditRecord({ ...editRecord, description: e.target.value })
+                }
                 placeholder="Description"
                 className="border border-blue-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50"
               />
             </div>
 
             <div className="flex flex-col w-full md:w-auto">
-              <label htmlFor="date" className="text-sm font-medium text-gray-700">Date</label>
+              <label
+                htmlFor="date"
+                className="text-sm font-medium text-gray-700"
+              >
+                Date
+              </label>
               <input
                 type="date"
                 value={editRecord.date}
-                onChange={(e) => setEditRecord({ ...editRecord, date: e.target.value })}
+                onChange={(e) =>
+                  setEditRecord({ ...editRecord, date: e.target.value })
+                }
                 className="border border-green-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-green-50"
               />
             </div>
 
             <div className="flex flex-col w-full md:w-auto">
-              <label htmlFor="amount" className="text-sm font-medium text-gray-700">Amount</label>
+              <label
+                htmlFor="amount"
+                className="text-sm font-medium text-gray-700"
+              >
+                Amount
+              </label>
               <input
                 type="number"
                 value={editRecord.amount}
-                onChange={(e) => setEditRecord({ ...editRecord, amount: e.target.value })}
+                onChange={(e) =>
+                  setEditRecord({ ...editRecord, amount: e.target.value })
+                }
                 placeholder="Amount"
                 className="border border-purple-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-purple-50"
               />
             </div>
 
             <div className="flex flex-col w-full md:w-auto">
-              <label htmlFor="category" className="text-sm font-medium text-gray-700">Category</label>
+              <label
+                htmlFor="category"
+                className="text-sm font-medium text-gray-700"
+              >
+                Category
+              </label>
               <select
                 value={editRecord.category}
-                onChange={(e) => setEditRecord({ ...editRecord, category: e.target.value })}
+                onChange={(e) =>
+                  setEditRecord({ ...editRecord, category: e.target.value })
+                }
                 className="border border-teal-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 bg-teal-50"
               >
                 <option value="">Select Category</option>
@@ -158,10 +191,20 @@ const FinancialRecordTable = () => {
             </div>
 
             <div className="flex flex-col w-full md:w-auto">
-              <label htmlFor="paymentMethod" className="text-sm font-medium text-gray-700">Payment Method</label>
+              <label
+                htmlFor="paymentMethod"
+                className="text-sm font-medium text-gray-700"
+              >
+                Payment Method
+              </label>
               <select
                 value={editRecord.paymentMethod}
-                onChange={(e) => setEditRecord({ ...editRecord, paymentMethod: e.target.value })}
+                onChange={(e) =>
+                  setEditRecord({
+                    ...editRecord,
+                    paymentMethod: e.target.value,
+                  })
+                }
                 className="border border-indigo-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-indigo-50"
               >
                 <option value="">Select Payment Method</option>
